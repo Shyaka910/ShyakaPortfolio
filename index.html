@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shyaka | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(
+            circle at 50% 0%,
+            rgba(88, 101, 242, 0.12),
+            transparent 55%
+        );
+    z-index: -1;
+        }
+
+        body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(37, 99, 235, 0.25),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(147, 51, 234, 0.22),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(79, 70, 229, 0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #070b1a,
+            #10102b,
+            #090817
+        );
+
+    background-attachment: fixed;
+}
+
+
+        /* HEADER */
+
+        header {
+            text-align: center;
+            padding: 70px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+            header h1 {
+                font-size: 55px;
+                letter-spacing: 3px;
+            }
+
+            header p {
+                color: #aaa;
+                font-size: 20px;
+            }
+
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+            border-left: 5px solid white;
+            padding-left: 15px;
+        }
+
+        .hero {
+            position: relative;
+            height: 280px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(7, 11, 26, 0.65),
+                    rgba(40, 20, 75, 0.75)
+                ),
+                url("Docs/Background.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: white;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #c5c5d5;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 800px;
+        }
+
+
+        /* SHOWCASE */
+
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 25px;
+        }
+
+
+        .card {
+            background: #0d0d0d;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+            .card:hover {
+                transform: translateY(-8px);
+                border-color: white;
+            }
+
+            .card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .card h3 {
+                margin-top: 18px;
+                font-size: 22px;
+            }
+
+            .card p {
+                color: #aaa;
+                margin-top: 10px;
+                font-size: 15px;
+            }
+
+
+        /* TRAILER */
+
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+
+            .video-container iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+
+
+        /* COMMERCIAL PROJECTS */
+
+
+        .project-box {
+            background: #111;
+            padding: 25px;
+            border: 1px solid #333;
+            text-decoration: none;
+            color: white;
+            border-radius: 12px;
+            transition: .3s;
+            display: block;
+        }
+
+
+            .project-box:hover {
+                transform: translateY(-8px);
+                border-color: white;
+            }
+
+
+            .project-box h3 {
+                margin-bottom: 10px;
+            }
+
+
+            .project-box p {
+                color: #aaa;
+            }
+
+
+        .click-text {
+            margin-top: 15px;
+            color: white !important;
+            font-size: 14px;
+        }
+
+
+
+        /* SKILLS */
+
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+
+        .tag {
+            padding: 10px 18px;
+            border: 1px solid white;
+            border-radius: 30px;
+            background: #111;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+
+            .tag:hover {
+                background: white;
+                color: black;
+            }
+
+
+
+        /* FOOTER */
+
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+
+            .contact-links a {
+                text-decoration: none;
+                color: white;
+                border: 1px solid white;
+                padding: 12px 25px;
+                border-radius: 30px;
+                font-size: 16px;
+                transition: .3s;
+            }
+
+
+                .contact-links a:hover {
+                    background: white;
+                    color: black;
+                }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Shyaka A.</h1>
+            <p>Gameplay Programmer | Unreal Engine C++ Developer</p>
+        </div>
+    </header>
+
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <h2>About</h2>
+
+        <p class="about">
+
+            Hello. My name is Shyaka I am an Experienced Gameplay Developer with 6+ years of professionalism in game industry specializing in Unreal Engine development using C++ and Blueprints.
+        </p>
+
+        <p class="about">
+            I have worked within proffesional gaming studios for the past 5+ years.
+
+            Experienced in replicated multiplayer gameplay, stealth systems, AI interactions, weapons,
+            abilities and performance-focused programming.
+
+        </p>
+
+    </section>
+
+
+
+
+    <!-- SHOWCASE -->
+
+    <section>
+
+        <h2>Showcase</h2>
+
+        <p class="about">
+            A co-op multiplayer action game prototype featuring tactical stealth, AI-driven enemies, and dynamic combat encounters.
+            Players can hide in tall grass, distract enemies using thrown objects, engage in gunfights, and use explosives to overcome threats.
+            Built in Unreal Engine with replicated gameplay systems, AI behavior trees, and custom C++ gameplay mechanics.
+        </p>
+
+        <h2>
+        </h2>
+
+        <div class="showcase-grid">
+
+
+            <div class="card">
+
+                <img src="Docs/Combat.gif">
+
+                <h3>Combat System</h3>
+
+                <p>
+                    A complete combat framework featuring weapon handling,
+                    damage systems, hit detection, enemy encounters and responsive
+                    gameplay interactions built in Unreal Engine C++.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="Docs/Luring.gif">
+
+                <h3>AI Luring System</h3>
+
+                <p>
+                    Implemented AI distraction mechanics where players can throw objects
+                    to create sounds and lure enemies away from their patrol areas.
+                    Uses Unreal AI perception and custom investigation behaviors.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="Docs/Multiplayer.gif">
+
+                <h3>Co-op Multiplayer</h3>
+
+                <p>
+                    Networked multiplayer gameplay with replicated player actions,
+                    shared gameplay states and synchronized combat interactions.
+                    Built using Unreal Engine replication systems.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="Docs/Stealth.gif">
+
+                <h3>Stealth System</h3>
+
+                <p>
+                    A dynamic stealth system featuring enemy awareness,
+                    detection progression, hiding mechanics and AI reactions
+                    based on player visibility and actions.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="Docs/Grenades.gif">
+
+                <h3>Grenade System</h3>
+
+                <p>
+                    Implemented explosive gameplay mechanics with area damage,
+                    enemy reactions and multiplayer replication support.
+                    Designed for smooth and responsive combat encounters.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="Docs/Behavior-tree.gif">
+
+                <h3>AI Behaviour Tree</h3>
+
+                <p>
+                    Created AI decision-making systems using Unreal Behaviour Trees,
+                    Blackboards and AI controllers to control enemy patrol,
+                    search and combat behaviors.
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <!-- Character Builder -->
+    <section>
+
+
+        <h2>Character Creator</h2>
+        
+        <p>
+            Character creator system in Unreal Engine with customizable character appearance, clothing, facial features, Makeup system,
+            hair style and different accessories, which relies heavily on Asset Managment system.
+
+        </p>
+
+        <h2>
+        </h2>
+
+        <div class="video-container">
+
+            <iframe src="https://www.youtube.com/embed/2Lus-SGMlwk"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+    </section>
+
+    <!-- TRAILER -->
+
+
+    <section>
+
+
+        <h2>Stealth Multiplayer</h2>
+
+        <p>
+            Multiplayer prototype showcasing different game systems in multiplayer framework including OnlineSessions, AI, Gun system,
+            Stealth systems, Inventory Systems, etc.. with network and bandwidth optimization in mind.
+        </p>
+
+        <h2>
+        </h2>
+
+        <div class="video-container">
+
+            <iframe src="https://www.youtube.com/embed/mGmGGpNKy-Y"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- COMMERCIAL PROJECTS -->
+
+    <section>
+
+        <h2>Commercial NDA Projects I've worked on.</h2>
+
+        <div class="projects">
+
+
+            <a href="https://store.steampowered.com/app/2295940/Master_of_Realms/" target="_blank" class="project-box">
+
+                <h3>Master of Realms</h3>
+
+                <p>
+                    Worked as Software Engineer contributing to gameplay features,
+                    systems and Unreal Engine development.
+                </p>
+
+                <p class="click-text">
+                    Click to view on Steam →
+                </p>
+
+            </a>
+
+
+
+            <a href="https://store.steampowered.com/app/3576060/Project_Origin/" target="_blank" class="project-box">
+
+                <h3>Project Origin </h3>
+
+                <p>
+                    Gameplay programming, multiplayer features,
+                    AI systems and player mechanics.
+                </p>
+
+                <p class="click-text">
+                    Click to view on Steam →
+                </p>
+
+            </a>
+
+            <a href="https://store.steampowered.com/app/1380070/Slaves_of_Rome/" target="_blank" class="project-box">
+
+                <h3>Slaves Of Rome </h3>
+
+                <p>
+                    Gameplay programming, UI and settings features,
+                    AI systems and Skill tree system.
+                </p>
+
+                <p class="click-text">
+                    Click to view on Steam →
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <!-- SKILLS -->
+
+
+    <section>
+
+
+        <h2>Skills</h2>
+
+
+        <div class="skills">
+
+
+            <span class="tag">Unreal Engine 5</span>
+
+            <span class="tag">C++/Blueprints</span>
+
+            <span class="tag">Character Creator Systems</span>
+
+            <span class="tag">Quest and Dialogue System</span>
+
+            <span class="tag">Skill tree and Crafting </span>
+
+            <span class="tag">Inventory and Upgrade System</span>
+
+            <span class="tag">Combat System</span>
+
+            <span class="tag">Animation programming</span>
+
+            <span class="tag">Gameplay Ability System</span>
+
+            <span class="tag">Multiplayer Replication</span>
+
+            <span class="tag">AI Behavior Trees</span>
+
+            <span class="tag">Gameplay Programming</span>
+
+            <span class="tag">Network Systems</span>
+
+            <span class="tag">Steam/Xbox/Playstation/EpicGames APIs Integration</span>
+
+            <span class="tag">GitHub and other source control</span>
+
+            <span class="tag">Perforce</span>
+
+            <span class="tag">Etc...</span>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONTACT LINKS -->
+
+    <section>
+
+        <h2>Links</h2>
+
+        <div class="contact-links">
+            
+            <a
+            href="https://discord.com/users/807778148854792202"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-discord"></i>
+            Message me on Discord
+            </a>
+
+            <a href="https://www.linkedin.com/in/shyaka-kadjura-180062251/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/Shyaka910/EggMultiplayer" target="_blank">
+                GitHub
+            </a>
+
+            <a href="mailto:shyakadjura@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026 Shyaka A.
+
+    </footer>
+
+
+</body>
+</html>
